@@ -25,4 +25,7 @@ public class ShoppingCart {
                 .collect(Collectors.summingDouble(Double::doubleValue));
     }
 
+    public Double getPriceWithTaxes(Country france) {
+        return getPriceWithoutTaxes() * france.getTaxToApply();
+    }
 }
