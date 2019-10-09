@@ -28,4 +28,32 @@ public class ShoppingCart {
     public Double getPriceWithTaxes(Country france) {
         return getPriceWithoutTaxes() * france.getTaxToApply();
     }
+
+    public Double getPriceWithTaxesAndReduction(Country france) {
+        return getPriceWithoutTaxes() * getReduction() * france.getTaxToApply();
+    }
+
+    public Double getReduction(){
+        if(getPriceWithoutTaxes() < 1000){
+            return 1.00;
+        }
+        else if(getPriceWithoutTaxes() >= 1000 && getPriceWithoutTaxes() < 5000) {
+            return 0.97;
+        }
+         else if(getPriceWithoutTaxes() >= 5000 && getPriceWithoutTaxes() < 7000){
+                return 0.95;
+        }
+        else if(getPriceWithoutTaxes() >= 7000 && getPriceWithoutTaxes() < 10000) {
+            return 0.93;
+        }
+        else if(getPriceWithoutTaxes() >= 10000 && getPriceWithoutTaxes() < 50000) {
+            return 0.90;
+        }
+        else if(getPriceWithoutTaxes() >= 50000) {
+            return 0.85;
+        }
+        else{
+            return 0.00;
+        }
+    }
 }

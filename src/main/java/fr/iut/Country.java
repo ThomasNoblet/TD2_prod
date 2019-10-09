@@ -1,7 +1,16 @@
 package fr.iut;
 
 public enum Country {
-    France(1.2);
+    FR(1.2),
+    DE(1.19),
+    DK(1.25),
+    HR(1.25),
+    IS(1.255),
+    CH(1.08);
+
+
+
+
 
     private final Double taxToApply;
     private Country(Double taxToApply){
@@ -12,3 +21,4 @@ public enum Country {
         return this.taxToApply;
     }
 }
+  
